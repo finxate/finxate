@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>Add Transaction</h1>
-<form method="post">
+<form method="post" action="/transactions/insert_transaction/">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save</button>
