@@ -1,20 +1,46 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Site</title>
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'transactions:index' %}">Transactions</a></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Site</title>
 
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
-</body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-6L46cK9z9ImU8bFRUeij6Uj03ztCid/u2zoFw6ZOGmJTpOzG1X2QvaAVLxEN/N0+" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-s8Qg7y3qee4vXPn+sWwro8QrD1/0rGTrxn9gdN6rmhzNlCvnJdYeqI0HlnreBLs1" crossorigin="anonymous"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/base.css' %}?v=1"
+    />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <span style="font-size: 24px; font-family: Montserrat">Finxate</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'transactions:index' %}"
+              >Transactions</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>{% block content %} {% endblock %}</main>
+
+    <footer>
+      {% block footer %}
+      <p>&copy; 2023 Finxate. All rights reserved.</p>
+      {% endblock %}
+    </footer>
+  </body>
 </html>

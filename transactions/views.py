@@ -21,3 +21,7 @@ def index(request):
 def add_transaction(request):
     form = TransactionForm()
     return render(request, 'transactions/transaction_form.html', {'form': form})
+
+def transactions_list(request):
+    transactions = Transaction.objects.all()
+    return render(request, 'transactions/transactions_list.html', {'transactions': transactions})

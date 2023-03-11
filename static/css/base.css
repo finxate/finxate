@@ -1,0 +1,14 @@
+nav {
+    background-color: #41b8fd;
+    color: #1d1261;
+  }
+  
+  nav .navbar-brand {
+    font-size: 24px;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  nav .nav-link:hover {
+    background-color: #D3D3D3;
+  }
+  
