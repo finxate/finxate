@@ -1,38 +1,32 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Finxate - Financial Management Web App</title>
-    <style>
-      /* Add custom styles for your homepage here */
-      /* For example: */
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-      }
-      .header {
-        background-color: #f2f2f2;
-        padding: 20px;
-        text-align: center;
-      }
-      .button {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Unbounded:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="header">
-      <h1>Finxate</h1>
-      <p>A financial management web app</p>
-      
+    <nav class="nav">
+      <a class="nav-title" href="{% url 'home' %}">Finxate</a>
+      <ul>
+        <li><a href="{% url 'transactions:index' %}">Login/Sign Up</a></li>
+      </ul>
+    </nav>
+    <div class="main-content">
+      <div class="image-container">
+        <img src="{% static 'images/home_vector.jpg' %}" alt="Placeholder Image" />
+      </div>
+      <div class="text-container">
+        <h2>Welcome to Finxate</h2>
+        <p>
+          Finxate is a financial management web app that helps you track your
+          income and expenses, create budgets, and more.
+        </p>
+        <a href="#" class="button">Get Started</a>
+      </div>
     </div>
   </body>
 </html>
