@@ -1,6 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+{% load static %}
 
 {% block content %}
-<h1>Transactions</h1>
-<p>Welcome to the Transactions page!</p>
+<h1 class="transactions-title">Transactions</h1>
+<p class="transactions-caption">Track all your transactions with ease and convenience using our user-friendly platform. Simply add your transactions and view them in one centralized location. </p>
+<div class="button-container">
+  <a class="button" href="{% url 'transactions:add_transaction' %}">Add Transaction</a>
+  <a class="button" href="{% url 'transactions:transactions_list' %}">List Transactions</a>
+</div>
+<br>
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'transactions/css/transactions.css' %}" />
 {% endblock %}
